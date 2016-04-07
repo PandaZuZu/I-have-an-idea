@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IHaveAnIdea</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>I Have An Idea</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag 'https://js.stripe.com/v2/' %>
+
+    <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container-fluid">
+    <div class="row">
+      <div class="search-box">
+        <img src="" width="10px" height="10px" />
+        <input type="text" class="search-field" placeholder="Search">
+      </div>
+      <div class="col-md-6">
+        <!-- empty -->
+      </div>
+      <%= link_to 'Login', home_index_path, class:'top-menu-links' %>
+      <a href="#" class="top-menu-links">
+        Register
+      </a>
+      <a href="#" class="top-menu-links">
+        About
+      </a>
+      <a href="#" class="top-menu-links">
+        Contact
+      </a>
+    </div>
+    <div class="header">
+      <div class="col-md-12">
+        <h1>Title</h1>
+      </div>
+    </div>
+    <div class="row">
+      <!-- featured -->
+      <div class="featured">
+        <h3>Featured</h3>
+      </div>
+    </div>
+    <%= yield %>
+  </div>
 </body>
 </html>

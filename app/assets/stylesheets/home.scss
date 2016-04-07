@@ -1,0 +1,16 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.project-container-item{
+  @extend .col-md-4;
+  width: 30%;
+  margin: 2% 1%;
+}
+
+.top-project-container-item{
+  @extend .col-md-12;
+  margin: 2% 0;
+}
