@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
             :uniqueness => true,
             :presence => true,
             :format => {
-              :with => /^[a-zA-Z0-9]/,
+              :with => /^[a-zA-Z0-9]+$/,
               :multiline => true,
               message: "must contain only letters and numbers"
             },

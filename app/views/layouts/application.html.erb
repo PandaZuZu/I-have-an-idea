@@ -22,8 +22,15 @@
       <div class="col-md-6">
         <!-- empty -->
       </div>
-      <%= link_to 'Login', login_path, class:'top-menu-links' %>
-      <%= link_to 'Register', register_path, class:'top-menu-links' %>
+      <% if current_user == nil %>
+        <%= link_to 'Login', login_path, class:'top-menu-links' %>
+        <%= link_to 'Register', register_path, class:'top-menu-links' %>
+      <% else %>
+        <div class="top-menu-links">
+          <!-- empty -->
+        </div>
+        <%= link_to 'Logout', logout_path, class:'top-menu-links' %>
+      <% end %>
       <%= link_to 'About', root_url, class:'top-menu-links' %>
       <%= link_to 'Contact', root_url, class:'top-menu-links' %>
     </div>
