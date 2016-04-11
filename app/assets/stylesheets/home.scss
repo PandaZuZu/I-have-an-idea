@@ -6,17 +6,24 @@
 
 .project-container-item{
   @extend .col-sm-3;
-  background-color: #fff;
   border: 2px solid #000;
   border-radius: 1em;
+  -webkit-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
   width: 23%;
   margin: 1%;
   .project-description{
-    padding-top: 30px;
+    background-color: #e0ebff;
+    padding: 2% 5%;
     text-align: left;
+    -webkit-box-shadow: inset 0px 15px 30px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 15px 30px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 15px 30px 0px rgba(0,0,0,0.75);
     h3{
       text-align: center;
     }
+
   }
 }
 

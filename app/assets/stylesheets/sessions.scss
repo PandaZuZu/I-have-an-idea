@@ -1,3 +1,36 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.form_input{
+  @extend .col-md-4;
+  text-align: left;
+  padding: 3%;
+  border-radius: 2em;
+  -webkit-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+}
+
+.button {
+    background-color: #abc;
+    border: none;
+    border-radius: 1em;
+    color: #111;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.alert{
+  color: red;
+  width: auto;
+}
+
+.input_field{
+  height: 50px;
+}
