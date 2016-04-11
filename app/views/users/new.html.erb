@@ -1,27 +1,24 @@
-<h1>Sign Up</h1>
-
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
+<div class="row">
+  <div class="col-md-4">
+    <!-- empty -->
+  </div>
+  <div class="form_input">
+    <%= form_for @user do |f|%>
+        <p><%= f.text_field :username, size:'50', class:"input_field", placeholder:'Username' %></p>
+        <p><%= f.password_field :password, size:'50', class:"input_field", placeholder:'Password' %></p>
+        <p><%= f.password_field :password_confirmation, size:'50', class:"input_field", placeholder:'Password Confirmation' %></p>
+        <p><%= f.submit "Register", class:'button' %></p>
+        <p><%= link_to "No account? Register here", root_url %></p>
+        <% if @user.errors.any? %>
+          <p class="alert">
+            <% @user.errors.full_messages.each do |e| %>
+              <%= e %><br/>
+            <% end %>
+          </p>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p class="button"><%= f.submit %></p>
-<% end %>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <!-- empty -->
+  </div>
+</div>
