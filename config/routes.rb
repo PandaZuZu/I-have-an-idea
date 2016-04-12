@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
 
+  get 'project_registration' => 'projects#new', as: 'projects'
+  post 'project_registration' => 'projects#create'
+
+
   get 'home/index'
 
   root 'home#index'

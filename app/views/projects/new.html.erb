@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-4">
+    <!-- empty -->
+  </div>
+  <div class="form_input">
+    <%= form_for @project do |f|%>
+        <p><%= f.text_field :title, size:'50', class:"input_field", placeholder:'Title' %></p>
+        <p><%= f.text_area :description, size:'55x10', placeholder:'Description' %></p>
+        <p><%= f.submit "Add", class:'button' %></p>
+        <% if @project.errors.any? %>
+          <p class="alert">
+            <% @project.errors.full_messages.each do |e| %>
+              <%= e %><br/>
+            <% end %>
+          </p>
+        <% end %>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <!-- empty -->
+  </div>
+</div>

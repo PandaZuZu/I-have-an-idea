@@ -8,7 +8,7 @@
         <p><%= f.password_field :password, size:'50', class:"input_field", placeholder:'Password' %></p>
         <p><%= f.password_field :password_confirmation, size:'50', class:"input_field", placeholder:'Password Confirmation' %></p>
         <p><%= f.submit "Register", class:'button' %></p>
-        <p><%= link_to "No account? Register here", root_url %></p>
+        <p><%= link_to "Already have an account? Login here.", login_path %></p>
         <% if @user.errors.any? %>
           <p class="alert">
             <% @user.errors.full_messages.each do |e| %>
