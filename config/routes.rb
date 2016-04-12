@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'project_registration' => 'projects#new', as: 'projects'
   post 'project_registration' => 'projects#create'
-
+  get 'my_project' => 'projects#show'
 
   get 'home/index'
 

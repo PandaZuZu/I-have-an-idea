@@ -6,69 +6,40 @@
       </div>
     </div>
     <div class="row">
-      <div class="project-container-item">
-        <img src="http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Games-icon.png" width="250px" height="250px" />
-        <div class="project-description">
-          <h3>Denumire</h3>
-          Descriere
+      <% @topProj.each do |tp| %>
+        <div class="project-container-item">
+          <% if tp.pictures[0] != nil %>
+            <%= image_tag tp.pictures[0], size:'250x250', style:'padding-top:20px' %>
+          <% else %>
+            <img src="http://wordpress.smartaddons.com/themes/sw_chamy/wp-content/themes/sw_chamy/assets/img/no-thumbnail.png" width="250px" height="250px" style="padding-top:20px"/>
+          <% end %>
+          <div class="project-description">
+            <h3><%= tp.title %></h3>
+            <%= tp.description %>
+          </div>
         </div>
-      </div>
-      <div class="project-container-item">
-        <img src="http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Games-icon.png" width="250px" height="250px" />
-        <div class="project-description">
-          <h3>Denumire</h3>
-          Descriere
-        </div>
-      </div>
-      <div class="project-container-item">
-        <img src="http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Games-icon.png" width="250px" height="250px" />
-        <div class="project-description">
-          <h3>Denumire</h3>
-          Descriere
-        </div>
-      </div>
-      <div class="project-container-item">
-        <img src="http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Games-icon.png" width="250px" height="250px" />
-        <div class="project-description">
-          <h3>Denumire</h3>
-          Descriere
-        </div>
-      </div>
+      <% end %>
     </div>
+
     <div class="row">
       <div class="project-container-title">
         <h2>New Projects</h2>
       </div>
     </div>
     <div class="row">
-      <div class="project-container-item">
-        <img src="http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Games-icon.png" width="250px" height="250px" />
-        <div class="project-description">
-          <h3>Denumire</h3>
-          Descriere
+      <% @newProj.each do |np| %>
+        <div class="project-container-item">
+          <% if np.pictures[0] != nil %>
+            <%= image_tag np.pictures[0], size:'250x250', style:'padding-top:20px' %>
+          <% else %>
+            <img src="http://wordpress.smartaddons.com/themes/sw_chamy/wp-content/themes/sw_chamy/assets/img/no-thumbnail.png" width="250px" height="250px" style="padding-top:20px"/>
+          <% end %>
+          <div class="project-description">
+            <h3><%= np.title %></h3>
+            <%= np.description %>
+          </div>
         </div>
-      </div>
-      <div class="project-container-item">
-        <img src="http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Games-icon.png" width="250px" height="250px" />
-        <div class="project-description">
-          <h3>Denumire</h3>
-          Descriere
-        </div>
-      </div>
-      <div class="project-container-item">
-        <img src="http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Games-icon.png" width="250px" height="250px" />
-        <div class="project-description">
-          <h3>Denumire</h3>
-          Descriere
-        </div>
-      </div>
-      <div class="project-container-item">
-        <img src="http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Games-icon.png" width="250px" height="250px" />
-        <div class="project-description">
-          <h3>Denumire</h3>
-          Descriere
-        </div>
-      </div>
+      <% end %>
     </div>
 
   </div>

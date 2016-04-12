@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="project-container">
+    <div class="row">
+      <div class="project-container-title">
+        <h2>My Projects</h2>
+      </div>
+    </div>
+    <% i = 0 %>
+    <div class="row">
+      <% @my_projects.each do |mp| %>
+      <% i = i + 1 %>
+        <div class="project-container-item">
+          <% if mp.pictures[0] != nil %>
+            <%= image_tag mp.pictures[0], size:'250x250', style:'padding-top:20px' %>
+          <% else %>
+            <img src="http://wordpress.smartaddons.com/themes/sw_chamy/wp-content/themes/sw_chamy/assets/img/no-thumbnail.png" width="250px" height="250px" style="padding-top:20px"/>
+          <% end %>
+          <div class="project-description">
+            <h3><%= mp.title %></h3>
+            <%= mp.description %>
+          </div>
+        </div>
+        <% if i == 4 %>
+          </div>
+          <div class="row">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
