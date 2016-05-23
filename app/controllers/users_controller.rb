@@ -5,6 +5,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.isBanned = false;
+
+    if User.all.size < 1
+      @user.isAdmin = true
+    else
+      @user.isAdmin = false
+    end
+
     if @user.save
       redirect_to root_url, :notice => "Signed up!"
     else

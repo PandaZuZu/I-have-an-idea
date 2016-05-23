@@ -17,6 +17,12 @@
             <h3><%= tp.title %></h3>
             <%= tp.description %>
           </div>
+          <% if current_user && current_user.isAdmin %>
+            <div class="project-edit-delete">
+              <%= button_tag 'Edit', class:"button"%>
+              <%= button_tag 'Delete', class:"button"%>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -37,6 +43,10 @@
           <div class="project-description">
             <h3><%= np.title %></h3>
             <%= np.description %>
+          </div>
+          <div class="project-edit-delete">
+            <%= button_tag 'Edit', class:"button"%>
+            <%= button_tag 'Delete', class:"button"%>
           </div>
         </div>
       <% end %>

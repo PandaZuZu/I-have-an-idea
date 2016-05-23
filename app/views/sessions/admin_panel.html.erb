@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-4">
+    <!-- empty -->
+  </div>
+  <div class="form_input">
+    <%= form_tag admin_panel_path do |f|%>
+        <p><%= password_field_tag :password, nil, size:'50', class:"input_field", placeholder:'Password' %></p>
+        <p><%= password_field_tag :password_confirmation, nil, size:'50', class:"input_field", placeholder:'Password Confirmation' %></p>
+        <p><%= submit_tag "Change password", class:'button' %></p>
+        <% if flash[:alert].present? %>
+          <p class="alert"><%= flash[:alert] %></p>
+        <% end %>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <!-- empty -->
+  </div>
+</div>

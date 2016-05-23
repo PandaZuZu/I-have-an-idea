@@ -16,10 +16,25 @@
   .project-description{
     padding: 2% 5%;
     text-align: left;
+    height: 150px;
+    overflow: hidden;
     h3{
       text-align: center;
     }
-
+  }
+  .project-edit-delete{
+    padding: 5% 5%;
+    .button {
+        background-color: #abc;
+        border: none;
+        border-radius: 1em;
+        color: #111;
+        padding: 10px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+    }
   }
 }
 

@@ -11,6 +11,7 @@
     <%= javascript_include_tag 'https://js.stripe.com/v2/' %>
 
     <%= csrf_meta_tags %>
+
 </head>
 <body>
   <div class="container-fluid">
@@ -28,13 +29,21 @@
         <%= link_to 'About', root_url, class:'top-menu-links' %>
         <%= link_to 'Contact', root_url, class:'top-menu-links' %>
       <% else %>
-        <%= link_to 'New Project', project_registration_path, class:'top-menu-links' %>
-        <%= link_to 'My Projects', my_project_path, class:'top-menu-links' %>
-        <%= link_to 'My Profile', root_url, class:'top-menu-links' %>
-        <%= link_to 'Logout', logout_path, class:'top-menu-links' %>
+        <% if current_user.isAdmin == false %>
+          <%= link_to 'New Project', project_registration_path, class:'top-menu-links' %>
+          <%= link_to 'My Projects', my_project_path, class:'top-menu-links' %>
+          <%= link_to 'My Profile', root_url, class:'top-menu-links' %>
+          <%= link_to 'Logout', logout_path, class:'top-menu-links' %>
+        <% else %>
+          <span class='top-menu-links'></span>
+          <%= link_to 'Show Projects', show_path, class:'top-menu-links' %>
+          <%= link_to 'Admin Panel', admin_panel_path, class:'top-menu-links' %>
+          <%= link_to 'Logout', logout_path, class:'top-menu-links' %>
+        <% end %>
       <% end %>
 
     </div>
+
     <div class="header">
       <div class="col-md-12">
         <h1>Title</h1>

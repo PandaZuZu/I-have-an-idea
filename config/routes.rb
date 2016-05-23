@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   post 'project_registration' => 'projects#create'
   get 'my_project' => 'projects#show'
 
+  get 'admin_panel' => 'sessions#admin_panel'
+  post 'admin_panel' => 'sessions#password_changed'
+
+  get 'show' => 'sessions#show'
+
   get 'home/index'
 
   root 'home#index'
