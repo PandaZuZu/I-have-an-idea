@@ -17,6 +17,13 @@ class ProjectsController < ApplicationController
     @my_projects = current_user.projects
   end
 
+  def destroy
+    project = Project.find(params[:toDelete])
+    project.destroy
+
+    redirect_to root_url
+  end
+
   private
   def project_params
     params.require(:project).permit(:title, :description, {pictures: []})

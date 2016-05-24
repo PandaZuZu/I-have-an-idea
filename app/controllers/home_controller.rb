@@ -9,6 +9,8 @@ class HomeController < ApplicationController
     @newProj = getNewProjects(projects)
   end
 
+
+
   private
   def getTopProjects(projects)
     return projects.order(rating: :desc).limit(4)

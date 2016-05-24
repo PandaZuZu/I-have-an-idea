@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'project_registration' => 'projects#new', as: 'projects'
   post 'project_registration' => 'projects#create'
+  post 'project_delete' => 'projects#destroy'
+
   get 'my_project' => 'projects#show'
 
   get 'admin_panel' => 'sessions#admin_panel'

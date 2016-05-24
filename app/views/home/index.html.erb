@@ -19,8 +19,7 @@
           </div>
           <% if current_user && current_user.isAdmin %>
             <div class="project-edit-delete">
-              <%= button_tag 'Edit', class:"button"%>
-              <%= button_tag 'Delete', class:"button"%>
+              <%= button_to 'Delete', project_delete_path(toDelete: tp.id), class:"button"%>
             </div>
           <% end %>
         </div>
@@ -45,7 +44,6 @@
             <%= np.description %>
           </div>
           <div class="project-edit-delete">
-            <%= button_tag 'Edit', class:"button"%>
             <%= button_tag 'Delete', class:"button"%>
           </div>
         </div>
