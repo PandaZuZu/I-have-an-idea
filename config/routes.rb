@@ -15,7 +15,14 @@ Rails.application.routes.draw do
   get 'admin_panel' => 'sessions#admin_panel'
   post 'admin_panel' => 'sessions#password_changed'
 
+  get 'achievement/show'
+  get 'achievement/new', as:'achievements'
+  post 'achievement/new' => 'achievement#create'
+  post 'achievement/destroy'
+
   get 'show' => 'sessions#show'
+
+
 
   get 'home/index'
 

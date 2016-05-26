@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="project-container">
+    <div class="row">
+      <div class="project-container-title">
+        <h2>Achievements</h2>
+      </div>
+    </div>
+    <% i = 0 %>
+    <div class="row">
+      <% if @achievements.any? %>
+        <% @achievements.each do |a| %>
+          <% i = i + 1 %>
+          <div class="project-container-item">
+            <% if a.pictures[0] != nil %>
+              <%= a.pictures[0] %>
+            <%end%>
+            <div class="project-description">
+              <h3><%= a.title %></h3>
+              <%= a.description %>
+            </div>
+            <% if current_user %>
+              <div class="project-edit-delete">
+                <%= button_to 'Delete', achievement_destroy_path(toDelete: a.id), class:"button", style:"float:right"%>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="project-container-item">
+          <div class="project-description">
+            <h3>There are no achievements</h3>
+          </div>
+        </div>
+
+        <!-- if 4 blocks then add a new row -->
+        <% if i == 4 %>
+          </div>
+          <div class="row">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to "Add new achievement", achievements_path %>
+  </div>
+</div>

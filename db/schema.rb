@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526092003) do
+ActiveRecord::Schema.define(version: 20160526123830) do
+
+  create_table "achievements", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "achievements_pictures", id: false, force: :cascade do |t|
+    t.integer "achievement_id", null: false
+    t.integer "picture_id",     null: false
+  end
+
+  create_table "achievements_users", id: false, force: :cascade do |t|
+    t.integer "user_id",        null: false
+    t.integer "achievement_id", null: false
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.string   "url"

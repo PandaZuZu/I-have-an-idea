@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+  has_many :achievements
   has_many :projects
 
   attr_accessor :password
