@@ -14,7 +14,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @my_projects = current_user.projects
+    if current_user == nil
+      redirect_to root_url
+    else
+      @my_projects = current_user.projects
+    end
   end
 
   def destroy

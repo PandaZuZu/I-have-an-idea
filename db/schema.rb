@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523102006) do
+ActiveRecord::Schema.define(version: 20160526092003) do
 
   create_table "pictures", force: :cascade do |t|
     t.string   "url"
@@ -38,10 +38,12 @@ ActiveRecord::Schema.define(version: 20160523102006) do
     t.string   "password_hash"
     t.string   "password_salt"
     t.integer  "projects_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.boolean  "isAdmin"
     t.boolean  "isBanned"
+    t.integer  "login_days"
+    t.date     "last_day_logged"
   end
 
 end

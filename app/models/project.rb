@@ -15,7 +15,7 @@ class Project < ActiveRecord::Base
   validates :description,
             :presence => true,
             :length => {
-              in: 5..500,
+              in: 5..5000,
               message: "length should be between 5 and 500 characters"
             }
 end

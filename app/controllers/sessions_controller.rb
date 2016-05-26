@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:username], params[:password])
     if user && !user.isBanned
       session[:user_id] = user.id
+
       redirect_to root_url, :notice => "Logged in!"
     else
       if user && user.isBanned
