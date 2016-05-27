@@ -6,11 +6,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.isBanned = false
+<<<<<<< HEAD
+=======
+
+>>>>>>> 987cccc8bf17f26ea80f7dc589b6cdb706a1be3c
     @user.last_day_logged = Date.today
     @user.login_days  = 7
     @user.coins = 110
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 987cccc8bf17f26ea80f7dc589b6cdb706a1be3c
     if User.all.size < 1
       @user.isAdmin = true
     else
