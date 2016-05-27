@@ -5,11 +5,18 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    if @project.save
+    if current_user.coins >= 100
+     if @project.save
       current_user.projects << @project
       redirect_to my_project_path
-    else
+         current_user.update_attribute :coins, current_user.coins - 100
+         current_user.save
+     else
       render "new"
+     end
+    else
+     flash.now.alert = "Insufficent coins"
+     render "new"
     end
   end
 

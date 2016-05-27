@@ -7,14 +7,10 @@
         <p><%= f.text_field :title, size:'50', class:"input_field", placeholder:'Title' %></p>
         <p><%= f.text_area :description, size:'55x10', placeholder:'Description' %></p>
         <p><%= f.file_field :pictures, multiple: true %></p>
-        <p><%= f.submit "Add", class:'button' %></p>
-        <% if @project.errors.any? %>
-          <p class="alert">
-            <% @project.errors.full_messages.each do |e| %>
-              <%= e %><br/>
-            <% end %>
-          </p>
-        <% end %>
+        <p><%= f.submit "Add", class:'button' %> Current Coins <%=current_user.coins%></p>
+    <% end %>
+    <% if flash[:alert].present? %>
+      <p class="alert"><%= flash[:alert] %></p>
     <% end %>
   </div>
   <div class="col-md-4">

@@ -5,8 +5,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.isBanned = false;
-
+    @user.isBanned = false
+    @user.last_day_logged = Date.today
+    @user.login_days  = 7
+    @user.coins = 110
     if User.all.size < 1
       @user.isAdmin = true
     else

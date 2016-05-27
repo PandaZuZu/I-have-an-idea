@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526092003) do
+ActiveRecord::Schema.define(version: 20160526114628) do
 
   create_table "pictures", force: :cascade do |t|
     t.string   "url"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160526092003) do
     t.boolean  "isBanned"
     t.integer  "login_days"
     t.date     "last_day_logged"
+    t.integer  "coins"
   end
 
 end
