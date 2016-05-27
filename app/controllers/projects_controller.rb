@@ -5,8 +5,16 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    if current_user.coins >= 100
+    if current_user.coins >= -190
+
      if @project.save
+       if current_user.projects.size <1
+         @achievement = Achievement.first
+          if !current_user.achievements.include?(@achievement)
+           current_user.achievements << @achievement
+           current_user.update_attribute :coins , current_user.coins + 1000
+          end
+       end
       current_user.projects << @project
       redirect_to my_project_path
          current_user.update_attribute :coins, current_user.coins - 100
