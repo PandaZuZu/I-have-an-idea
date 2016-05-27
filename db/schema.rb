@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160526114628) do
-=======
 ActiveRecord::Schema.define(version: 20160526124059) do
 
 # Could not dump table "achievements" because of following NoMethodError
@@ -28,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160526124059) do
     t.integer "user_id",        null: false
     t.integer "achievement_id", null: false
   end
->>>>>>> origin/master
 
   create_table "pictures", force: :cascade do |t|
     t.string   "url"

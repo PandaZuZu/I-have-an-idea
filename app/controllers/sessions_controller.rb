@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate(params[:username], params[:password])
     if user && !user.isBanned
-      if user.last_day_logged < Date.today
+      if user.last_day_logged && user.last_day_logged < Date.today
        give_reward(user)
       end
       session[:user_id] = user.id
