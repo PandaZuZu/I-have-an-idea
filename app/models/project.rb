@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   belongs_to :user
+  has_many :reviews
   has_many :pictures
   serialize :pictures
   mount_uploaders :pictures, PictureUploader

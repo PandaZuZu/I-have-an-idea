@@ -18,8 +18,6 @@ class ProjectsController < ApplicationController
         end
 
         current_user.projects << @project
-        #redirect_to my_project_path
-        render :js => "window.location.href='http://google.ro';"
         current_user.update_attribute :coins, current_user.coins - 100
         current_user.save
       else
@@ -47,7 +45,9 @@ class ProjectsController < ApplicationController
   def update
 
   end
-
+  def viewproject
+    @current_project = Project.find(params[:toFind])
+  end
   def destroy
     project = Project.find(params[:toDelete])
     project.destroy

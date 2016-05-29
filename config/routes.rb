@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'project_delete' => 'projects#destroy'
   get 'project/edit'
   post 'project/update'
+  get 'project/viewproject'
 
   get 'my_project' => 'projects#show'
 
@@ -24,6 +25,11 @@ Rails.application.routes.draw do
 
 
   get 'show' => 'sessions#show'
+
+  get 'review/show'
+  get 'review/new', as:'reviews'
+  post 'review/new' => 'review#create'
+
 
 
 
