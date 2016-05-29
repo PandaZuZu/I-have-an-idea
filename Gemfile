@@ -9,7 +9,6 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
-gem 'autoprefixer-rails'
 #for encryption
 gem 'bcrypt-ruby', :require => 'bcrypt'
 # Use Uglifier as compressor for JavaScript assets

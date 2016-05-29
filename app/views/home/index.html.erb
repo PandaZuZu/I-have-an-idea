@@ -24,7 +24,11 @@
               </div>
               <% elsif current_user %>
               <div class="project-edit-delete">
+<<<<<<< HEAD
                 <%= link_to 'View', projects_viewproject_path(toFind: tp.id), class:"button"%>
+=======
+                <%= button_to 'View', project_viewproject_path(toFind: tp.id), class:"button"%>
+>>>>>>> 61d212c20134357e5215709da53860566144c4f6
               </div>
             <% end %>
           </div>
