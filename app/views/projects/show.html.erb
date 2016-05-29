@@ -1,6 +1,19 @@
 <div class="row">
   <div class="project-container">
     <div class="row">
+      <% if flash[:achievementToShow].present? %>
+          <div class="col-sm-4"></div>
+          <div class="projectAchievement">
+            <%= flash[:achievementToShow] %>
+          </div>
+          <div class="col-sm-4"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="project-container">
+    <div class="row">
       <div class="project-container-title">
         <h2>My Projects</h2>
       </div>

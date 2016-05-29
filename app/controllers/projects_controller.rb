@@ -18,8 +18,14 @@ class ProjectsController < ApplicationController
         end
 
         current_user.projects << @project
-        #redirect_to my_project_path
-        render :js => "window.location.href='http://google.ro';"
+
+        if achievementToShow != nil
+          flash[:achievementToShow] = achievementToShow.title
+        end
+
+        #ilieionutcosmin@gmail.com
+
+        redirect_to my_project_path
         current_user.update_attribute :coins, current_user.coins - 100
         current_user.save
       else
