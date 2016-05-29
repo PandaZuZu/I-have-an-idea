@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
   has_many :reviews
   has_many :pictures
   serialize :pictures
+  
   mount_uploaders :pictures, PictureUploader
 
   validates :title,

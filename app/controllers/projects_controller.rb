@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     achievementToShow = Achievement.new
-    if current_user.coins >= 10
+    if current_user.coins >= 100
       if @project.save
         if current_user.projects.size < 1
           @achievement = Achievement.first
@@ -18,17 +18,13 @@ class ProjectsController < ApplicationController
         end
 
         current_user.projects << @project
-<<<<<<< HEAD
 
         if achievementToShow != nil
           flash[:achievementToShow] = achievementToShow.title
         end
 
-        #ilieionutcosmin@gmail.com
 
         redirect_to my_project_path
-=======
->>>>>>> 9f4a1fa38a3ce4e1f0191831f82bcf825698f5e5
         current_user.update_attribute :coins, current_user.coins - 100
         current_user.save
       else
@@ -56,9 +52,11 @@ class ProjectsController < ApplicationController
   def update
 
   end
+
   def viewproject
     @current_project = Project.find(params[:toFind])
   end
+
   def destroy
     project = Project.find(params[:toDelete])
     project.destroy

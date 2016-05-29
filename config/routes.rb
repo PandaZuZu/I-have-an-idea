@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get 'project_registration' => 'projects#new', as: 'projects'
   post 'project_registration' => 'projects#create'
   post 'project_delete' => 'projects#destroy'
-  get 'project/edit'
-  post 'project/update'
-  get 'project/viewproject'
+  get 'projects/edit' => 'projects#edit', as: 'project'
+  post 'projects/update'
+  get 'projects/viewproject'
 
   get 'my_project' => 'projects#show'
 
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   post 'achievement/new' => 'achievement#create'
   post 'achievement/destroy'
 
+  get 'users/show_achievement'
 
   get 'show' => 'sessions#show'
 

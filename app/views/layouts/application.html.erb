@@ -17,8 +17,10 @@
   <div class="container-fluid">
     <div class="row">
       <div class="search-box">
-        <img src="" width="10px" height="10px" />
-        <input type="text" class="search-field" placeholder="Search">
+        <% if current_user && !current_user.isAdmin %>
+          <%= image_tag("coin.png", size: "25x25") %>
+          <%= current_user.coins %>
+        <% end %>
       </div>
       <div class="col-md-6">
         <!-- empty -->
@@ -30,11 +32,9 @@
         <%= link_to 'Contact', root_url, class:'top-menu-links' %>
       <% else %>
         <% if current_user.isAdmin == false %>
-
-                coins <%= current_user.coins    %> 
           <%= link_to 'New Project', project_registration_path, class:'top-menu-links' %>
           <%= link_to 'My Projects', my_project_path, class:'top-menu-links' %>
-          <%= link_to 'My Profile', root_url, class:'top-menu-links' %>
+          <%= link_to 'Achievements', users_show_achievement_path, class:'top-menu-links' %>
           <%= link_to 'Logout', logout_path, class:'top-menu-links' %>
         <% else %>
           <%= link_to 'Achievements', achievement_show_path, class:'top-menu-links' %>

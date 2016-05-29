@@ -23,6 +23,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show_achievement
+    @achievements = current_user.achievements
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :password_confirmation)

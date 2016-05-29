@@ -1,5 +1,5 @@
 class Achievement < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :users
   has_many :pictures
   serialize :pictures
   mount_uploaders :pictures, PictureUploader
