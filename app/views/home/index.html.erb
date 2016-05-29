@@ -22,6 +22,10 @@
               <div class="project-edit-delete">
                 <%= button_to 'Delete', project_delete_path(toDelete: tp.id), class:"button"%>
               </div>
+              <% elsif current_user %>
+              <div class="project-edit-delete">
+                <%= link_to 'View', project_viewproject_path(toFind: tp.id), class:"button"%>
+              </div>
             <% end %>
           </div>
         <% end %>
