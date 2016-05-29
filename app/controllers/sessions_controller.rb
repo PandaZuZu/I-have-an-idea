@@ -22,13 +22,14 @@ class SessionsController < ApplicationController
         render "new"
     end
   end
+
   def give_reward(user)
     if user.last_day_logged == Date.yesterday
        if login_days < 7
-     user.update_attribute :login_days, user.login_days + 1
-     user.update_attribute :coins, user.coins + user.login_days*10
+         user.update_attribute :login_days, user.login_days + 1
+         user.update_attribute :coins, user.coins + user.login_days*10
        else
-     user.update_attribute :coins, user.coins + 50
+         user.update_attribute :coins, user.coins + 50
        end
     else
      user.update_attribute :login_days, 1
@@ -37,6 +38,7 @@ class SessionsController < ApplicationController
      user.update_attribute :last_day_logged, Date.today
      user.save
   end
+  
   def admin_panel
     if current_user == nil
       redirect_to root_url

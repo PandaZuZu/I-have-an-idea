@@ -16,6 +16,6 @@ class Project < ActiveRecord::Base
             :presence => true,
             :length => {
               in: 5..5000,
-              message: "length should be between 5 and 500 characters"
+              message: "length should be between 5 and 5000 characters"
             }
 end

@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160526124059) do
-=======
 ActiveRecord::Schema.define(version: 20160527131333) do
->>>>>>> 987cccc8bf17f26ea80f7dc589b6cdb706a1be3c
 
 # Could not dump table "achievements" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
