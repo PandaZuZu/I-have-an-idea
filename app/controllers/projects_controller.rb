@@ -20,11 +20,12 @@ class ProjectsController < ApplicationController
         current_user.projects << @project
 
         if achievementToShow != nil
+          @achiev = @achievement
           flash[:achievementToShow] = achievementToShow.title
         end
 
 
-        redirect_to my_project_path
+        redirect_to my_project_path(@achiev)
         current_user.update_attribute :coins, current_user.coins - 100
         current_user.save
       else

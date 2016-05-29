@@ -3,15 +3,15 @@ class Project < ActiveRecord::Base
   has_many :reviews
   has_many :pictures
   serialize :pictures
-  
+
   mount_uploaders :pictures, PictureUploader
 
   validates :title,
             :uniqueness => true,
             :presence => true,
             :length => {
-              in: 5..50,
-              message: "length should be between 5 and 50 characters"
+              in: 5..150,
+              message: "length should be between 5 and 150 characters"
             }
 
   validates :description,

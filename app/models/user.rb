@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :achievements
   has_many :projects
+  has_many :reviews
 
   attr_accessor :password
 

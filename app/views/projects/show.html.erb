@@ -4,6 +4,10 @@
       <% if flash[:achievementToShow].present? %>
           <div class="col-sm-4"></div>
           <div class="projectAchievement">
+            New Achievement: <br/>
+            <% @achiev = Achievement.find_by_title(flash[:achievementToShow]) %>
+            <br/>
+            <%= image_tag @achiev.pictures[0], size:'100x100' %>
             <%= flash[:achievementToShow] %>
           </div>
           <div class="col-sm-4"></div>
