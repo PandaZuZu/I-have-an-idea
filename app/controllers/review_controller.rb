@@ -1,14 +1,15 @@
 class ReviewController < ApplicationController
-  def new
-    @review=Review.new
-  end
 
   def create
     @review = Review.new(user_params)
     if @review.save
-      redirect_to root_url, :notice => "review created"
+      current_project = Project.find(params[:toFind])
+      current_project.reviews << @review
+      current_user.reviews << @review
+
+      redirect_to projects_viewproject_path(toFind: params[:toFind]), :notice => "Review created"
     else
-      render "new"
+      render projects_viewproject_path
     end
   end
 

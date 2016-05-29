@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529202032) do
+ActiveRecord::Schema.define(version: 20160529220341) do
 
 # Could not dump table "achievements" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20160529202032) do
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "project_id"
+    t.integer  "user_id"
   end
 
   create_table "reviews_users", id: false, force: :cascade do |t|
