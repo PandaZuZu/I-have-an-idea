@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   get 'review/new', as:'reviews'
   post 'review/new' => 'review#create'
 
-
+  get 'confirm/:id' => 'sessions#confirmation'
 
 
   get 'home/index'

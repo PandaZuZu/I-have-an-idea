@@ -38,11 +38,16 @@ class SessionsController < ApplicationController
      user.update_attribute :last_day_logged, Date.today
      user.save
   end
-  
+
   def admin_panel
     if current_user == nil
       redirect_to root_url
     end
+  end
+
+  def confirmation
+
+    render 'admin_panel'
   end
 
   def password_changed
