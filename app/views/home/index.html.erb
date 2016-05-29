@@ -57,11 +57,11 @@
             </div>
             <% if current_user && current_user.isAdmin %>
               <div class="project-edit-delete">
-                <%= button_to 'Delete', project_delete_path(toDelete: tp.id), class:"button"%>
+                <%= button_to 'Delete', project_delete_path(toDelete: np.id), class:"button"%>
               </div>
               <% elsif current_user %>
               <div class="project-edit-delete">
-                <%= link_to 'View', projects_viewproject_path(toFind: tp.id), class:"button"%>
+                <%= link_to 'View', projects_viewproject_path(toFind: np.id), class:"button"%>
                 <%#= button_to 'View', projects_viewproject_path(toFind: tp.id), class:"button"%>
               </div>
             <% end %>

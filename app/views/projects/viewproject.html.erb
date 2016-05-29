@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="project-view-container-item">
+    <div class="project-description">
+      <h3><%= @current_project.title %></h3>
+      <%= @current_project.description %>
+    </div>
+    <div style="margin-bottom:5%">
+      <% for i in 0..@current_project.pictures.size - 1 %>
+        <% if @current_project.pictures[i] != nil %>
+          <%= image_tag(@current_project.pictures[i], width:'200', style:'margin: 0 1%') %>
+        <%end%>
+      <%end%>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

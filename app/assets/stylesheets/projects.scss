@@ -1,6 +1,30 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
 .input_field{
   height: 1000px;
+}
+
+.project-view-container-item{
+  @extend .col-md-6;
+  border: 2px solid #000;
+  border-radius: 1em;
+  -webkit-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  margin: 1%;
+  .project-description{
+    padding: 2% 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    height: 150px;
+    overflow: hidden;
+    h3{
+      text-align: center;
+    }
+  }
 }

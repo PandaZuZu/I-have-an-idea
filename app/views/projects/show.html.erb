@@ -20,31 +20,37 @@
     </div>
     <% i = 0 %>
     <div class="row">
-      <% @my_projects.each do |mp| %>
-      <% i = i + 1 %>
-        <div class="project-container-item">
-          <% if mp.pictures[0] != nil %>
-            <%= image_tag mp.pictures[0], size:'250x250', style:'padding-top:20px' %>
-          <% else %>
-            <img src="http://wordpress.smartaddons.com/themes/sw_chamy/wp-content/themes/sw_chamy/assets/img/no-thumbnail.png" width="250px" height="250px" style="padding-top:20px"/>
-          <% end %>
-          <div class="project-description">
-            <h3><%= mp.title %></h3>
-            <%= mp.description %>
-          </div>
-          <% if current_user %>
-            <div class="project-edit-delete">
-              <%#= link_to 'Edit', project_path(toEdit: mp.id), class:"button", style:"float:left"%>
-              <%= button_to 'Delete', project_delete_path(toDelete: mp.id), class:"button"%>
+      <% if @my_projects.any? %>
+        <% @my_projects.each do |mp| %>
+        <% i = i + 1 %>
+          <div class="project-container-item">
+            <% if mp.pictures[0] != nil %>
+              <%= image_tag mp.pictures[0], size:'250x250', style:'padding-top:20px' %>
+            <% else %>
+              <img src="http://wordpress.smartaddons.com/themes/sw_chamy/wp-content/themes/sw_chamy/assets/img/no-thumbnail.png" width="250px" height="250px" style="padding-top:20px"/>
+            <% end %>
+            <div class="project-description">
+              <h3><%= mp.title %></h3>
+              <%= mp.description %>
             </div>
-          <% end %>
-        </div>
-
-        <!-- if 4 blocks then add a new row -->
-        <% if i == 4 %>
+            <% if current_user %>
+              <div class="project-edit-delete">
+                <%#= link_to 'Edit', project_path(toEdit: mp.id), class:"button", style:"float:left"%>
+                <%= button_to 'Delete', project_delete_path(toDelete: mp.id), class:"button"%>
+              </div>
+            <% end %>
           </div>
-          <div class="row">
+
+          <!-- if 4 blocks then add a new row -->
+          <% if i == 4 %>
+            </div>
+            <div class="row">
+          <% end %>
         <% end %>
+        <% else %>
+        <div class="project-container-item">
+          There are no projects
+        </div>
       <% end %>
     </div>
   </div>
