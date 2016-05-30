@@ -12,7 +12,11 @@
           <% i = i + 1 %>
           <div class="project-container-item">
             <% if a.pictures[0] != nil %>
-              <%= image_tag a.pictures[0], size:'250x250', style:'padding-top:20px' %>
+              <%= image_tag a.pictures[0],class:'col-xs-12', style:'padding-top:20px' %>
+            <%end%>
+            <% if a.pictures[0] == nil %>
+            <img src="http://www.agetruck.com/truck_img/default.gif" alt="Smiley face" class="col-xs-12">
+
             <%end%>
             <div class="project-description">
               <h3><%= a.title %></h3>

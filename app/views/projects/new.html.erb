@@ -4,8 +4,8 @@
   </div>
   <div class="form_input">
     <%= form_for @project do |f|%>
-        <p><%= f.text_field :title, size:'50', class:"input_field", placeholder:'Title' %></p>
-        <p><%= f.text_area :description, size:'55x10', placeholder:'Description' %></p>
+        <p><%= f.text_field :title, class:"input_field col-xs-12", placeholder:'Title' %></p>
+        <p><%= f.text_area :description,class:"col-xs-12 input_filed2", placeholder:'Description' %></p>
         <p><%= f.file_field :pictures, multiple: true %></p>
         <p><%= f.submit "Add", class:'button' %> </p>
         <p><%= label_tag '100', nil,  style:'font-size:15px' %><%= image_tag("coin.png", size: "25x25") %></p>

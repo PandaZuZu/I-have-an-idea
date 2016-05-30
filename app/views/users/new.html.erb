@@ -4,9 +4,9 @@
   </div>
   <div class="form_input">
     <%= form_for @user do |f|%>
-        <p><%= f.text_field :username, size:'50', class:"input_field", placeholder:'Email' %></p>
-        <p><%= f.password_field :password, size:'50', class:"input_field", placeholder:'Password' %></p>
-        <p><%= f.password_field :password_confirmation, size:'50', class:"input_field", placeholder:'Password Confirmation' %></p>
+        <p><%= f.text_field :username, class:"input_field col-xs-12", placeholder:'Email' %></p>
+        <p><%= f.password_field :password, class:"input_field col-xs-12", placeholder:'Password' %></p>
+        <p><%= f.password_field :password_confirmation, class:"input_field col-xs-12", placeholder:'Password Confirmation' %></p>
         <p><%= f.submit "Register", class:'button' %></p>
         <p><%= link_to "Already have an account? Login here.", login_path %></p>
         <% if @user.errors.any? %>
