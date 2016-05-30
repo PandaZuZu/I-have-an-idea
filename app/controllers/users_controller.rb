@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.isBanned = false
     @user.last_day_logged = Date.today
-    @user.login_days  = 7
+    @user.login_days  = 0
     @user.coins = 100
 
     if User.all.size < 1
