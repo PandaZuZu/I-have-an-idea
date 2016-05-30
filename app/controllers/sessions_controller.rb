@@ -5,30 +5,25 @@ class SessionsController < ApplicationController
 
   def create
     user = User.authenticate(params[:username], params[:password])
-    if user.is_confirmed
-      @coins = 0
-      if user && !user.isBanned
-        if user.last_day_logged && user.last_day_logged < Date.today
-         @coins = give_reward(user)
-        end
-        session[:user_id] = user.id
-        if @coins > 0
-          flash[:added] = @coins
-          redirect_to root_url
-        else
-          redirect_to root_url, :notice => "Logged in!"
-        end
+    @coins = 0
+    if user && user.is_confirmed
+      if user.last_day_logged && user.last_day_logged < Date.today
+       @coins = give_reward(user)
+      end
+      session[:user_id] = user.id
+      if @coins > 0
+        flash[:added] = @coins
+        redirect_to root_url
       else
-        if user && user.isBanned
-          flash.now.alert = "User is banned"
-        else
-          flash.now.alert = "Invalid username or password"
-        end
-          render "new"
+        redirect_to root_url, :notice => "Logged in!"
       end
     else
-      flash.now.alert = "Please confirm your email"
-      render "new"
+      if user && !user.is_confirmed
+        flash.now.alert = "Please confirm your email"
+      else
+        flash.now.alert = "Invalid username or password"
+      end
+        render "new"
     end
   end
 
@@ -90,7 +85,7 @@ class SessionsController < ApplicationController
   end
 
   def confirmation
-    if @user = User.where("username = ?", params[:id]).first
+    if @user = User.where("username like ?", "%"+params[:id]+"%").first
       @user.update_attribute :is_confirmed, true
       @user.save
     else
