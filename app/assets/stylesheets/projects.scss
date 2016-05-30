@@ -28,3 +28,33 @@
     }
   }
 }
+
+.project-review-container-item{
+  @extend .col-md-12;
+  border: 2px solid #000;
+  border-radius: 1em;
+  -webkit-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  margin: 1%;
+  margin-bottom: 2%;
+  .project-description{
+    padding: 2% 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    h3{
+      text-align: center;
+    }
+  }
+}
+
+.review_input{
+  @extend .col-md-6;
+  text-align: left;
+  padding: 3%;
+  border-radius: 2em;
+  -webkit-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  box-shadow: 10px 10px 80px 10px rgba(0,0,0,0.5);
+  margin: 1%;
+}

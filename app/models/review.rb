@@ -6,8 +6,8 @@ validates :title,
           :uniqueness => true,
           :presence => true,
           :length => {
-            in: 5..20,
-            message: "length should be between 5 and 20 characters"
+            in: 5..150,
+            message: "length should be between 5 and 150 characters"
 
           }
 

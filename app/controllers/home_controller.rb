@@ -7,6 +7,7 @@ class HomeController < ApplicationController
     projects = Project.all
     @topProj = getTopProjects(projects)
     @newProj = getNewProjects(projects)
+
   end
 
 

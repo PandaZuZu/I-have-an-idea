@@ -71,6 +71,7 @@ class ProjectsController < ApplicationController
 
   def viewproject
     @current_project = Project.find(params[:toFind])
+    @review = Review.new
   end
 
   def destroy

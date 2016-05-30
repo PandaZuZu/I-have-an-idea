@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'projects/edit' => 'projects#edit', as: 'project'
   post 'projects/update'
   get 'projects/viewproject'
+  post 'projects/viewproject' => 'reviews#create'
 
   get 'my_project' => 'projects#show'
 
