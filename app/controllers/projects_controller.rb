@@ -25,11 +25,12 @@ class ProjectsController < ApplicationController
  def give_achievement(current_user)
   achievementToShow = Achievement.new
    if current_user.projects.size < 1
-     @achievement = Achievement.find(1)
-     if !current_user.achievements.include?(@achievement)
-       current_user.achievements << @achievement
-       current_user.update_attribute :coins , current_user.coins + 100
-       achievementToShow = @achievement
+     if @achievement = Achievement.where("title like ?", "%Getting started%").first
+       if !current_user.achievements.include?(@achievement)
+         current_user.achievements << @achievement
+         current_user.update_attribute :coins , current_user.coins + 100
+         achievementToShow = @achievement
+       end
      end
    end
    if current_user.projects.size == 1

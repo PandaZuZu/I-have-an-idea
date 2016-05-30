@@ -27,34 +27,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  def give_achievement(user)
-    if  user.login_days == 0
-       @achievement = Achievement.find(6)
-        if !user.achievements.include?(@achievement)
-         user.achievements << @achievement
-         user.update_attribute :coins , user.coins + 100
-         achievementToShow = @achievement
-         user.update_attribute :login_days , 1
-        end
-       if achievementToShow != nil
-         @achiev = @achievement
-         flash[:achievementToShow] = achievementToShow.title
-       end
-   end
-   if  user.login_days ==7
-      @achievement = Achievement.find(5)
-       if !user.achievements.include?(@achievement)
-        user.achievements << @achievement
-        user.update_attribute :coins , user.coins + 100
-        achievementToShow = @achievement
-       end
-      if achievementToShow != nil
-        @achiev = @achievement
-        flash[:achievementToShow] = achievementToShow.title
-      end
-    end
-  end
-
   def give_reward(user)
     if user.last_day_logged == Date.today.prev_day
       @coins = 0
