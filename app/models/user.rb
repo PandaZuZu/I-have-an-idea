@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
               message: "is not valid email address"
             },
             :length => {
-              in: 5..20,
-              message: "length should be between 5 and 20 characters"
+              in: 5..100,
+              message: "length should be between 5 and 100 characters"
             }
 
   validates :password,
