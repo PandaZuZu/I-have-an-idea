@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :description
       t.integer :pictures_id
       t.integer :user_id
-      t.integer :rating
+      t.float :rating
 
       t.timestamps null: false
     end

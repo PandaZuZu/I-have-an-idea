@@ -33,24 +33,8 @@ class ProjectsController < ApplicationController
        end
      end
    end
-   if current_user.projects.size == 1
-     @achievement = Achievement.find(2)
-     if !current_user.achievements.include?(@achievement)
-       current_user.achievements << @achievement
-       current_user.update_attribute :coins , current_user.coins + 100
-       achievementToShow = @achievement
-     end
-   end
-   if current_user.projects.size == 2
-     @achievement = Achievement.find(2)
-     if !current_user.achievements.include?(@achievement)
-       current_user.achievements << @achievement
-       current_user.update_attribute :coins , current_user.coins + 100
-       achievementToShow = @achievement
-     end
-   end
+
    if achievementToShow != nil
-     @achiev = @achievement
      flash[:achievementToShow] = achievementToShow.title
    end
  end
