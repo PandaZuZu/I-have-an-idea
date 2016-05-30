@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
      end
    end
    if current_user.projects.size == 2
-     @achievement = Achievement.find(3)
+     @achievement = Achievement.find(2)
      if !current_user.achievements.include?(@achievement)
        current_user.achievements << @achievement
        current_user.update_attribute :coins , current_user.coins + 100
