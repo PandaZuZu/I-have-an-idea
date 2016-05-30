@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.isBanned = false
-    @user.last_day_logged = Date.today
+    @user.last_day_logged = Date.yesterday
     @user.login_days  = 0
     @user.coins = 100
 
