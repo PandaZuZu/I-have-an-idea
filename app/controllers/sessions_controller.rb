@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
        @coins = give_reward(user)
       end
       session[:user_id] = user.id
-      if @coins > 0
+      if @coins > 0 && !user.isAdmin
         flash[:added] = @coins
         redirect_to root_url
       else
