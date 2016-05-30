@@ -6,9 +6,12 @@
 
 
 .input_field{
-  height: 1000px;
+  height: 50px;
 }
-
+.input_filed2{
+  height: 140px;
+  margin-bottom: 30px;
+}
 .project-view-container-item{
   @extend .col-md-6;
   border: 2px solid #000;
