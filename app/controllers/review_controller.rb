@@ -6,10 +6,17 @@ class ReviewController < ApplicationController
       current_project = Project.find(params[:toFind])
       current_project.reviews << @review
       current_user.reviews << @review
+      if current_project.rating != nil
+        current_project.update_attribute :rating, (current_project.rating.to_f + params[:rating].to_f) /2
+      else
+        current_project.update_attribute :rating, params[:rating]
+      end
+
+      current_project.save
 
       redirect_to projects_viewproject_path(toFind: params[:toFind]), :notice => "Review created"
     else
-      render projects_viewproject_path
+      redirect_to projects_viewproject_path(toFind: params[:toFind])
     end
   end
 

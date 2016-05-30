@@ -2,7 +2,9 @@
   <div class="col-md-3"></div>
   <div class="project-view-container-item">
     <div class="project-description">
-      <h3><%= @current_project.title %></h3>
+      <h3><%= @current_project.title %><br></h3>
+      <%= @current_project.rating %> <%= image_tag('coin.png', size:'25x25') %>
+      <br>
       <%= @current_project.description %>
     </div>
     <div style="margin-bottom:5%">
@@ -42,6 +44,7 @@
           <h3 style="text-align:center">Add new Review</h3>
           <p><%= f.text_field :title, size:'50', class:"input_field", placeholder:'Title' %></p>
           <p><%= f.text_area :content, size:'55x10', placeholder:'Content' %></p>
+          <p>Rating <%= select_tag 'rating', "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %></p>
           <p><%= f.button :Add, name: 'toFind', value: @current_project.id , class:'button' %> </p>
       <% end %>
       <% if flash[:alert].present? %>
