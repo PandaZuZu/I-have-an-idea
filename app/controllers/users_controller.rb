@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.isBanned = false
     @user.last_day_logged = Date.today
-    @user.login_days  = 7
+    @user.login_days  = 0
     @user.coins = 100
 
     if User.all.size < 1
@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     else
       @user.isAdmin = false
     end
+    
     require 'net/http'
 
     stri= "http://www3.conectoo.ro/aero-new/connect2/SendMail?api_key=fyalkjevxivj8qkxtl&email="+@user.username+"&subject=Confirmation&sender_name=FMI&sender_email=fmi@email.com&sender_reply_to=jack.sparrow@email.com&message_content=Please_click_this_link_to_activate_your_account:"+"http://localhost:3000/confirm/"+@user.username+"&is_bulk=false"

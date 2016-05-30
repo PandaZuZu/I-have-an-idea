@@ -1,3 +1,27 @@
+<script>
+  $('document').ready(function() {
+    setTimeout(function() {
+      $('.projectAchievement').slideUp();
+    }, 2000);
+  });
+</script>
+<div class="row">
+  <div class="project-container">
+    <div class="row">
+      <% if flash[:added].present? %>
+          <div class="col-sm-4"></div>
+          <div class="projectAchievement">
+            <h3>Login bonus:</h3>
+            <%= image_tag 'coin.png', size:'100x100' %>
+            <%= flash[:added] %>
+          </div>
+          <div class="col-sm-4"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
 <div class="row">
   <div class="project-container">
     <div class="row">

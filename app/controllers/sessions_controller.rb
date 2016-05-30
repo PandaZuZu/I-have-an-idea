@@ -5,14 +5,18 @@ class SessionsController < ApplicationController
 
   def create
     user = User.authenticate(params[:username], params[:password])
+    @coins = 0
     if user && !user.isBanned
       if user.last_day_logged && user.last_day_logged < Date.today
-       give_reward(user)
+       @coins = give_reward(user)
       end
       session[:user_id] = user.id
-
-      redirect_to root_url, :notice => "Logged in!"
-
+      if @coins > 0
+        flash[:added] = @coins
+        redirect_to root_url
+      else
+        redirect_to root_url, :notice => "Logged in!"
+      end
     else
       if user && user.isBanned
         flash.now.alert = "User is banned"
@@ -24,19 +28,24 @@ class SessionsController < ApplicationController
   end
 
   def give_reward(user)
+    @coins = 0
     if user.last_day_logged == Date.yesterday
-       if login_days < 7
+       if user.login_days < 7
          user.update_attribute :login_days, user.login_days + 1
          user.update_attribute :coins, user.coins + user.login_days*10
+         @coins = user.login_days * 10
        else
          user.update_attribute :coins, user.coins + 50
+         @coins = 50
        end
     else
      user.update_attribute :login_days, 1
      user.update_attribute :coins, user.coins + 10
+     @coins = 10
     end
      user.update_attribute :last_day_logged, Date.today
      user.save
+     @coins
   end
 
   def admin_panel
