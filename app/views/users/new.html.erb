@@ -4,7 +4,7 @@
   </div>
   <div class="form_input">
     <%= form_for @user do |f|%>
-        <p><%= f.text_field :username, size:'50', class:"input_field", placeholder:'Username' %></p>
+        <p><%= f.text_field :username, size:'50', class:"input_field", placeholder:'Email' %></p>
         <p><%= f.password_field :password, size:'50', class:"input_field", placeholder:'Password' %></p>
         <p><%= f.password_field :password_confirmation, size:'50', class:"input_field", placeholder:'Password Confirmation' %></p>
         <p><%= f.submit "Register", class:'button' %></p>

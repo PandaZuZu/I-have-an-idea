@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
             :uniqueness => true,
             :presence => true,
             :format => {
-              :with => /^[a-zA-Z0-9]+$/,
+              :with => /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
               :multiline => true,
-              message: "must contain only letters and numbers"
+              message: "is not valid email address"
             },
             :length => {
               in: 5..20,

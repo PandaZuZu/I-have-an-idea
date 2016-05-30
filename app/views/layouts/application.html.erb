@@ -28,8 +28,8 @@
       <% if current_user == nil %>
         <%= link_to 'Login', login_path, class:'top-menu-links' %>
         <%= link_to 'Register', register_path, class:'top-menu-links' %>
-        <%= link_to 'About', root_url, class:'top-menu-links' %>
-        <%= link_to 'Contact', root_url, class:'top-menu-links' %>
+        <%= link_to "", root_url, class:'top-menu-links' %>
+        <%= link_to "", root_url, class:'top-menu-links' %>
       <% else %>
         <% if current_user.isAdmin == false %>
           <%= link_to 'New Project', project_registration_path, class:'top-menu-links' %>
